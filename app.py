@@ -19,8 +19,9 @@ import streamlit as st  # Biblioteca para criar aplicativos web interativos
 
 
 
-# Definindo a chave da API necessária para acessar o serviço do ChatGroq
-api_key = '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'
+# Acessando a chave da API dos secrets
+api_key = st.secrets["GROQ_API_KEY"]
+os.environ['GROQ_API_KEY'] = api_key
 
 # Configurando a variável de ambiente para armazenar a chave da API do serviço de linguagem Groq
 os.environ['GROQ_API_KEY'] = api_key  # Atribui a chave da API à variável de ambiente 'GROQ_API_KEY'
